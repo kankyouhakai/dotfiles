@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
+# export PATH="$PATH:'/mnt/c/Users/kitao/AppData/Local/Programs/Microsoft VS Code/bin/'"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -100,13 +100,29 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="/snap/bin/nvim"
+alias cls="clear"
+alias ls='eza --icons'
 
 eval "$(oh-my-posh init zsh --config ~/kitao.omp.json)"
+
+export WINHOME="/mnt/c/Users/kitao"
 
 if [ -z ${TMUX} ]; then
 	tmux new-session -A -s default
 fi
 
+if [ -z ${VSCode_DIR} ]; then
+    export VSCode_DIR='/mnt/c/Users/kitao/AppData/Local/Programs/Microsoft VS Code/bin'
+    export PATH="$VSCode_DIR:$PATH"
+fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
