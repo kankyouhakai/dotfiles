@@ -75,3 +75,9 @@ vim -c "CocInstall coc-clangd"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 exec zsh
 ```
+
+## todo
+- oh-my-poshの説明
+- pyenvの説明
+- nerd fontの説明
+- lazygitの説明 
