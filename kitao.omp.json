@@ -5,27 +5,32 @@
       "alignment": "left",
       "segments": [
         {
+          "background": "#E0E0E0",
+          "foreground": "#AF0000",
+
+          "style": "diamond",
+          "template": "\uf0e7",
+          "type": "root"
+        },
+
+        {
           "background": "#003543",
           "foreground": "#00c983",
-          "leading_diamond":"\ue0b6",
           "style": "diamond",
-          "template": "{{ .Icon }} ",
+          "template": " {{ .Icon }} ",
           "type": "os"
-        },
-        
-        
+        },        
         {
-          "background": "#DA627D",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
+          "background": "#87AFFF",
+          "foreground": "#262626",
+          "powerline_symbol": "",
           "properties": {
             "style": "full"
           },
           "style": "powerline",
           "template": " {{ .Path }} ",
           "type": "path"
-        },
-        {
+        },        {
           "background": "#95ffa4",
           "foreground": "#193549",
           "powerline_symbol": "\ue0b0",
@@ -41,18 +46,30 @@
         },
         {
           "background": "#01579B",
-          "foreground": "#ffffff",
-	  "powerline_symbol":"\ue0b0",
+          "foreground": "#ffe354",
+	        "powerline_symbol":"\ue0b0",
           "style": "powerline",
           "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
           "trailing_diamond": "\ue0b4",
           "type": "python"
         },
         {
+          "background": "#303030",
+          "foreground": "#3C873A",
+	      "powerline_symbol":"\ue0b0",
+          "properties": {
+          },
+          "style": "powerline",
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "node"
+        },
+        {
           "background": "#26BDBB",
           "foreground": "#0C212F",
           "properties": {
-            "threshold": 1000
+            "threshold": 1000,
+			"style": "round"
           },
           "style": "diamond",
           "template": " {{ .FormattedMs }} ",
