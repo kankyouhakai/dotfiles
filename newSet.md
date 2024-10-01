@@ -14,6 +14,15 @@ chsh -s /bin/zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+### Hack Nerdを入れる
+```bash
+curl -sSL https://github.com/ryanoasis/nerd-fonts//releses/latest/download/Hack.zip -O
+unzip Hack.zip -d Hack
+sudo mkdir -p /usr/share/fonts/downloadfont
+sudo mv -fv ./Hack /usr/share/fonts/downloadfont
+sudo fc-cache -fv
+```
+再起動するなり設定から適用するなりしてください
 
 ### tmuxを入れる
 - なんともともと入っている！
@@ -76,8 +85,25 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 exec zsh
 ```
 
+### oh-my-poshを入れる
+```bash
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh//releases/latest/download/posh-linux-arm64 -O /usr/local/bin/oh-my-posh
+sudo chmod +x /usr/local/bin/oh-my-posh
+exec zsh
+```
+themeのファイルの場所はzshrcにある
+
+### pyenvを入れる
+```bash
+curl https://pyenv.run | bash
+pyenv install --list # 利用可能なバージョンの確認
+pyenv install <version>
+pyenv global <version>
+```
+`pyenv versions`で入れてるバージョンがわかる
+
+
+
 ## todo
-- oh-my-poshの説明
-- pyenvの説明
 - nerd fontの説明
 - lazygitの説明 
