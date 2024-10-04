@@ -95,15 +95,22 @@ themeのファイルの場所はzshrcにある
 
 ### pyenvを入れる
 ```bash
+sudo apt install openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
 curl https://pyenv.run | bash
 pyenv install --list # 利用可能なバージョンの確認
 pyenv install <version>
 pyenv global <version>
 ```
 `pyenv versions`で入れてるバージョンがわかる
+`pyenv install`のときにWARNINGが出たらパッケージが足りてない
 
-
+### dockerを入れる
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo gpasswd -a $USER docker # dockerグループに追加
+newgrp docker # dockerグループに追加
+```
 
 ## todo
-- nerd fontの説明
 - lazygitの説明 
