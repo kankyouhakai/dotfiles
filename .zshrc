@@ -103,7 +103,8 @@ alias vim="/snap/bin/nvim"
 alias cls="clear"
 alias ls='eza --icons'
 
-eval "$(oh-my-posh init zsh --config ~/kitao.omp.json)"
+ eval "$(oh-my-posh init zsh --config ~/kitao.omp.json)"
+# eval "$(starship init zsh)"
 
 export WINHOME="/mnt/c/Users/kitao"
 
@@ -119,6 +120,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$PATH:`yarn global bin`"
 
 export PYENV_ROOT="$HOME/.pyenv"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -127,3 +129,6 @@ eval "$(pyenv init -)"
 
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+[ -f "/home/kitao/.ghcup/env" ] && . "/home/kitao/.ghcup/env" # ghcup-env
+
