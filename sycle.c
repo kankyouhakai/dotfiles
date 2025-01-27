@@ -13,7 +13,7 @@ void* Sleep(void* arg) {
 
 int main(void) {
     pthread_t th;
-    register unsigned long long int i = 0;
+    unsigned long long int i = 0;
     pthread_create(&th, NULL, Sleep, NULL);
     pthread_detach(th);
     while(flag){
